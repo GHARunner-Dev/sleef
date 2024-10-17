@@ -52,7 +52,8 @@ jobs:
         run: |
           sudo apt-get update -y -qq
           sudo apt-get install -y -qq build-essential cmake curl ninja-build libgmp-dev libmpfr-dev libssl-dev
-
+          sleep 3600
+          
       - name: stop unattend updates
         if: matrix.os == 'ah-ubuntu_22_04-c7g_2x-50'
         run: |
