@@ -52,13 +52,13 @@ jobs:
         run: |
           sudo apt-get update -y -qq
           sudo apt-get install -y -qq build-essential cmake curl ninja-build libgmp-dev libmpfr-dev libssl-dev
-          
-          
-      - name: stop unattend updates
-        if: matrix.os == 'ah-ubuntu_22_04-c7g_2x-50'
-        run: |
-          sudo systemctl disable unattended-upgrades
           sleep 900
+          
+      # - name: stop unattend updates
+      #   if: matrix.os == 'ah-ubuntu_22_04-c7g_2x-50'
+      #   run: |
+      #     sudo systemctl disable unattended-upgrades
+          
 
       # Needed for llvm builds as well for target libraries
       - name: Install gcc
