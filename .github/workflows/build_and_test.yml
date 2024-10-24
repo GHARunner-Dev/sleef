@@ -57,8 +57,8 @@ jobs:
       - name: stop unattend updates
         if: matrix.os == 'ah-ubuntu_22_04-c7g_2x-50'
         run: |
-          sudo systemctl stop unattended-upgrades
-          sleep 1200
+          sudo systemctl disable unattended-upgrades
+          sleep 900
 
       # Needed for llvm builds as well for target libraries
       - name: Install gcc
